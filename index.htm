@@ -141,8 +141,10 @@
 
     <!-- Frontend -->
     <div class="category">
-      <h2>Frontend Development</h2>
-
+      <div class="switch">
+        <h2>Frontend Development</h2>
+         <i class="fas fa-angle-down"></i>
+      </div>
       <div class="skill">
         <div class="skill-info">
           <span>HTML</span>
@@ -216,8 +218,28 @@
 
     <!-- Programming -->
     <div class="category">
-      <h2>Programming Languages</h2>
-
+      <div class="switch">
+        <h2>Programming Languages</h2>
+        <i class="fas fa-angle-down"></i>
+      </div>
+      <div class="skill">
+        <div class="skill-info">
+          <span>PowerShell</span>
+          <span>70%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress" style="width:70%"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <div class="skill-info">
+          <span>Bash Scripting</span>
+          <span>90%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress" style="width:90%"></div>
+        </div>
+      </div>
       <div class="skill">
         <div class="skill-info">
           <span>Python</span>
@@ -271,7 +293,11 @@
 
     <!-- Cybersecurity -->
     <div class="category">
-      <h2>Cybersecurity & Pentesting</h2>
+      <div class="switch">
+        <h2>Cybersecurity & Pentesting</h2>
+        <i class="fas fa-angle-down"></i>
+      </div>
+    
 
       <div class="skill">
         <div class="skill-info">
@@ -306,7 +332,11 @@
 
     <!-- System & Backend -->
     <div class="category">
-      <h2>System & Backend</h2>
+      <div class="switch">
+        <h2>System & Backend</h2>
+         <i class="fas fa-angle-down"></i>
+      </div>
+      
 
       <div class="skill">
         <div class="skill-info">
@@ -317,30 +347,18 @@
           <div class="progress" style="width:88%"></div>
         </div>
       </div>
-
       <div class="skill">
         <div class="skill-info">
-          <span>PowerShell</span>
-          <span>78%</span>
+          <span>MySQL</span>
+          <span>82%</span>
         </div>
         <div class="progress-bar">
-          <div class="progress" style="width:78%"></div>
+          <div class="progress" style="width:82%"></div>
         </div>
       </div>
-
       <div class="skill">
         <div class="skill-info">
-          <span>Bash Scripting</span>
-          <span>84%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress" style="width:84%"></div>
-        </div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-info">
-          <span>Database</span>
+          <span>Mongodb</span>
           <span>82%</span>
         </div>
         <div class="progress-bar">
@@ -351,7 +369,11 @@
 
     <!-- Markup -->
     <div class="category">
-      <h2>Markup & Query Languages</h2>
+      <div class="switch">
+        <h2>Markup & Query Languages</h2>
+         <i class="fas fa-angle-down"></i>
+      </div>
+      
 
       <div class="skill">
         <div class="skill-info">
@@ -516,14 +538,18 @@
         pagination: {
           el: ".swiper-pagination",
         },
-
-        // Navigation arrows
-
-        // And if we need scrollbar
         scrollbar: {
           el: ".swiper-scrollbar",
         },
       });
+      
+$(".category .skill").hide();
+$(".category").first().find(".skill").show();
+$(".category .switch").click(function () {
+  let parent = $(this).parent();
+  parent.find(".skill").slideToggle(300);
+  parent.toggleClass("active");
+});
     </script>
   </body>
 </html>

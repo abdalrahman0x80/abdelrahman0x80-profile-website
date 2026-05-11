@@ -317,6 +317,13 @@ a{
     transform:skewX(-25deg);
     animation:shine 2.5s infinite;
 }
+/* switch down */
+
+.switch {
+    display: flex;
+    justify-content: space-between;
+
+}
 
 /* =========================
    PROJECTS
